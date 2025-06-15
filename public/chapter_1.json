@@ -1,0 +1,43 @@
+{
+  "chapter_id": "1",
+  "title": "Стычка в аэропорту",
+  "scenes": [
+    {
+      "id": "1",
+      "image": "/scene1.jpg",
+      "text": "Эда: (мысленно) «Если я опоздаю, стипендия точно уйдёт другому…»",
+      "choices": [
+        {
+          "text": "Резко ответить",
+          "reply": "Реплика 1",
+          "next": "2",
+          "effects": {
+            "eda_proud": 1
+          }
+        },
+        {
+          "text": "Извиниться",
+          "reply": "Реплика 2",
+          "next": "2",
+          "effects": {
+            "serkan_first_impression": 1
+          }
+        },
+        {
+          "text": "Промолчать и уйти",
+          "reply": "Реплика 3",
+          "next": "2",
+          "effects": {
+            "eda_proud": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "image": "/scene2.jpg",
+      "text": "Продолжение истории...",
+      "choices": []
+    }
+  ]
+}
