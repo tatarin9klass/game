@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from "next/image";
 
-// Простой Button-компонент
+// Простая кнопка
 const Button = (props: any) => (
   <button
     {...props}
@@ -82,18 +82,21 @@ export default function MiniAppGame() {
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
-   <Image
-  src={scene.image}
-  alt="scene"
-  layout="fill"
-  objectFit="cover"
-  className="z-0 opacity-70"
-/>
+      {/* Фоновая картинка */}
+      <Image
+        src={scene.image}
+        alt="scene"
+        layout="fill"
+        objectFit="cover"
+        className="z-0 opacity-70"
+      />
 
+      {/* Текст сцены */}
       <div className="absolute z-10 top-4 left-4 right-4 bg-white text-black p-4 rounded-xl shadow-xl text-lg">
         {replyText ? replyText : scene.text}
       </div>
 
+      {/* Кнопки */}
       {!replyText && (
         <div className="absolute z-20 bottom-4 left-4 right-4 flex flex-col gap-2">
           {scene.choices.map((choice: any, idx: number) => (
@@ -104,7 +107,8 @@ export default function MiniAppGame() {
         </div>
       )}
 
-      <div className="absolute top-4 right-4 text-xs bg-black/60 text-white px-2 py-1 rounded">
+      {/* Характеристики игрока */}
+      <div className="absolute z-30 top-4 right-4 text-xs bg-black/60 text-white px-2 py-1 rounded">
         <p>🎭 Юмор: {flags.humor}</p>
         <p>💪 Уверенность: {flags.eda_proud}</p>
         <p>😊 Вежливость: {flags.serkan_first_impression}</p>
