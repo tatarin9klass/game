@@ -4,7 +4,7 @@ import Image from "next/image";
 const Button = (props: any) => (
   <button
     {...props}
-    className="bg-white text-black rounded-xl px-4 py-2 hover:bg-gray-200 transition-all"
+    className="bg-white text-black border-2 border-black rounded-xl px-4 py-2 hover:bg-gray-200 transition-all"
   />
 );
 
@@ -82,7 +82,7 @@ export default function MiniAppGame() {
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
       {/* Фон */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
+      <div className="absolute z-0 top-0 left-0 w-full h-full">
         <Image
           src={scene.image}
           alt="scene"
@@ -92,13 +92,13 @@ export default function MiniAppGame() {
       </div>
 
       {/* Текст */}
-      <div className="absolute z-10 top-4 left-4 right-4 bg-white text-black p-4 rounded-xl shadow-xl text-lg">
+      <div className="absolute z-10 top-4 left-4 right-4 bg-white text-black p-4 rounded-xl shadow-xl text-lg border-4 border-blue-500">
         {replyText ? replyText : scene.text}
       </div>
 
       {/* Кнопки */}
       {!replyText && (
-        <div className="absolute z-20 bottom-4 left-4 right-4 flex flex-col gap-2">
+        <div className="absolute z-20 bottom-4 left-4 right-4 flex flex-col gap-2 border-4 border-green-500 p-2">
           {scene.choices.map((choice: any, idx: number) => (
             <Button key={idx} onClick={() => handleChoice(choice)}>
               {choice.text}
@@ -108,7 +108,7 @@ export default function MiniAppGame() {
       )}
 
       {/* Характеристики */}
-      <div className="absolute z-30 top-4 right-4 text-xs bg-black/60 text-white px-2 py-1 rounded">
+      <div className="absolute z-30 top-4 right-4 text-xs bg-black/60 text-white px-2 py-1 rounded border-2 border-yellow-300">
         <p>🎭 Юмор: {flags.humor}</p>
         <p>💪 Уверенность: {flags.eda_proud}</p>
         <p>😊 Вежливость: {flags.serkan_first_impression}</p>
