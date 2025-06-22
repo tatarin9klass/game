@@ -82,20 +82,20 @@ export default function MiniAppGame() {
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
-      <Image
-        src={scene.image}
-        alt="scene"
-        layout="fill"
-        objectFit="cover"
-        className="opacity-70"
-      />
+   <Image
+  src={scene.image}
+  alt="scene"
+  layout="fill"
+  objectFit="cover"
+  className="z-0 opacity-70"
+/>
 
-      <div className="absolute top-4 left-4 right-4 bg-white text-black p-4 rounded-xl shadow-xl text-lg">
+      <div className="absolute z-10 top-4 left-4 right-4 bg-white text-black p-4 rounded-xl shadow-xl text-lg">
         {replyText ? replyText : scene.text}
       </div>
 
       {!replyText && (
-        <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-2">
+        <div className="absolute z-20 bottom-4 left-4 right-4 flex flex-col gap-2">
           {scene.choices.map((choice: any, idx: number) => (
             <Button key={idx} onClick={() => handleChoice(choice)}>
               {choice.text}
