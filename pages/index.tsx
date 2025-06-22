@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Image from "next/image";
 
-// Простая кнопка
 const Button = (props: any) => (
   <button
     {...props}
@@ -82,15 +81,17 @@ export default function MiniAppGame() {
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
-      {/* Фоновая картинка */}
-   <Image
-  src={scene.image}
-  alt="scene"
-  fill
-  className="absolute z-0 top-0 left-0 w-full h-full object-cover opacity-70"
-/>
+      {/* Фон */}
+      <div className="absolute top-0 left-0 w-full h-full z-0">
+        <Image
+          src={scene.image}
+          alt="scene"
+          fill
+          className="object-cover opacity-70"
+        />
+      </div>
 
-      {/* Текст сцены */}
+      {/* Текст */}
       <div className="absolute z-10 top-4 left-4 right-4 bg-white text-black p-4 rounded-xl shadow-xl text-lg">
         {replyText ? replyText : scene.text}
       </div>
@@ -106,7 +107,7 @@ export default function MiniAppGame() {
         </div>
       )}
 
-      {/* Характеристики игрока */}
+      {/* Характеристики */}
       <div className="absolute z-30 top-4 right-4 text-xs bg-black/60 text-white px-2 py-1 rounded">
         <p>🎭 Юмор: {flags.humor}</p>
         <p>💪 Уверенность: {flags.eda_proud}</p>
