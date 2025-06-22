@@ -80,14 +80,14 @@ export default function MiniAppGame() {
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
-      {/* Фоновая картинка */}
+      {/* Фон */}
       <div className="absolute inset-0 z-0">
-  <img
-    src={scene.image}
-    alt="scene"
-    className="w-full h-full object-cover opacity-70"
-  />
-</div>
+        <img
+          src={scene.image}
+          alt="scene"
+          className="w-full h-full object-cover opacity-70"
+        />
+      </div>
 
       {/* Текст */}
       <div className="absolute z-10 top-4 left-4 right-4 bg-white text-black p-4 rounded-xl shadow-xl text-lg">
