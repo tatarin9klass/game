@@ -86,7 +86,7 @@ export default function MiniAppGame() {
        <img
   src={scene.image}
   alt="scene"
-  className="absolute z-0 top-0 left-0 w-full h-full object-cover opacity-70"
+  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.7 }}
 />
       </div>
 
